@@ -31,6 +31,13 @@ THEN I am again presented with current and future conditions for that city
 ```
 
 JSON to retrieve weather data
+Module 6 Activities 21-24 and 27 as project examples once solutions are pushed
+
+link user input to url
+fetch response data to url
+loop through responses to create list
+format what parts of response I want to show up on page and how (create elements)
+prevent default when user hits search button
 
 ## Mock-Up
 

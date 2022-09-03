@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <style>
+        body {
+            background-image: url("./Assets/background.jpg");
+            
+        }
+    </style>
+    <title>Small Talk Weather</title>
 </head>
+
 <body>
-    <script src="script.js"></script>
+    <header>
+        <div class="jumbotron jumbotron-fluid text-center">
+            <div class="container">
+                <h1 class="display-4 font-weight-bolder">Weather Dashboard</h1>
+                <p class="lead"></p>
+            </div>
+        </div>
+    </header>
+    <div class="container text-center">
+        <form class="card bc">
+            <div>
+                <label class="font-weight-bolder m-5" id="searchheader">ENTER A CITY NAME BELOW:</label>
+                <input type="email" class="form-control col-8 mx-auto m-4" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <button type="submit" class="btn btn-primary col-4 m-5">Search</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./Assets/js/script.js"></script>
 </body>
+
 </html>
