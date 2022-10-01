@@ -97,7 +97,7 @@ function forecastResults(forData) {
 
 
 function searchAPI(city) {
-    var searchUrl = 'http://api.openweathermap.org/data/2.5/weather?q=';
+    var searchUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
     searchUrl = searchUrl + city + "&appid=" + weatherApiKey + "&units=imperial";
 
     fetch(searchUrl)
@@ -132,7 +132,7 @@ function searchAPI(city) {
 
 
 function searchApiForecast(city) {
-    var forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast?&q=';
+    var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?&q=';
     forecastUrl = forecastUrl + city + "&appid=" + weatherApiKey + "&units=imperial";
 
     fetch(forecastUrl)
