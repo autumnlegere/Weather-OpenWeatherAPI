@@ -1,5 +1,4 @@
 
-
 .jumbotron {
     background-color: rgba(46, 103, 85, 0.858);
 }
@@ -18,6 +17,35 @@ h1 {
 
 .bc {
     background-color: rgba(255, 255, 255, 0.64);
+    color: rgb(46, 103, 85);
+    margin: 0% 0% 0% 5%;
+}
+
+.bc h2 {
+    color: white;
+    text-shadow: 2px 2px 2px rgb(86, 86, 86);
+}
+
+.wr {
+    background-color: rgba(255, 255, 255, 0.64);
+    color: rgb(46, 103, 85);
+    margin: 0% 2% 3% 0%;
+}
+
+.wr h2 {
+    color: white;
+    text-shadow: 2px 2px 2px rgb(86, 86, 86);
+}
+
+.fs {
+    color: white;
+    background-color: rgba(46, 103, 85, 0.858)
+}
+
+.fs h5 {
+    color: white;
+    text-shadow: 2px 2px 1px rgb(62, 62, 62);
+    font-size: 140%;
 }
 
 #searchheader {

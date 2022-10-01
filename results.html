@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./Assets/css/style.css" />
     <style>
         body {
-            background-image: url("./Assets/background.jpg");
+            background-image: url("./Assets/images/background.jpg");
 
         }
     </style>
@@ -29,23 +29,22 @@
     <div class="d-flex row">
 
         <div class="container text-center col-3" id="citysearch">
-            <form class="card bc m-3">
+            <form class="card bc">
                 <div>
                     <label class="font-weight-bolder m-5" id="searchheader">ENTER A CITY NAME:</label>
                     <input class="form-control col-8 mx-auto m-4" id="input">
                     <button type="submit" class="btn btn-primary col-4 m-3">Search</button>
                     <a href="./index.html" class="btn btn-block col-4 mb-3 mx-auto btn-secondary">&larr; Back</a>
-
+                    <div id="previous-searches"></div>
                 </div>
             </form>
         </div>
 
         <div class="col-9 text-light">
             <div id="weatherresults"></div>
+            <div class="row" id="forecast-here"></div>
         </div>
     </div>
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
