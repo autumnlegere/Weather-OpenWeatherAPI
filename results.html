@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links to bootstrap and fontawesome and style css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="./Assets/css/style.css" />
+    <!-- sets background as an image -->
     <style>
         body {
             background-image: url("./Assets/images/background.jpg");
@@ -20,14 +22,15 @@
 
 <body>
     <header>
+        <!-- jumbotron -->
         <div class="jumbotron jumbotron-fluid text-center">
             <div class="container">
                 <h1 class="display-4 font-weight-bolder">Weather Dashboard</h1>
             </div>
         </div>
     </header>
+    <!-- search form and previous search history -->
     <div class="d-flex row">
-
         <div class="container text-center col-3" id="citysearch">
             <form class="card bc">
                 <div>
@@ -35,17 +38,18 @@
                     <input class="form-control col-8 mx-auto m-4" id="input">
                     <button type="submit" class="btn btn-primary col-4 m-3">Search</button>
                     <a href="./index.html" class="btn btn-block col-4 mb-3 mx-auto btn-secondary">&larr; Back</a>
-                    <div id="previous-searches"></div>
+                    <ul id="previous-searches"><ul>
                 </div>
             </form>
         </div>
-
+        <!-- current and forecast weather results -->
         <div class="col-9 text-light">
             <div id="weatherresults"></div>
             <div class="row" id="forecast-here"></div>
         </div>
     </div>
 
+    <!-- links to jquery, moment js, and results.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./Assets/js/results.js"></script>

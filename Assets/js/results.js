@@ -1,4 +1,3 @@
-
 var resultsContent = document.getElementById("weatherresults");
 var previousSearch = document.getElementById("previous-searches")
 var forecastDiv = document.getElementById("forecast-here")
@@ -16,13 +15,12 @@ function parameters() {
 
     var city = searchParameters[0].split("=").pop();
 
-    searchAPI(city)
+    searchAPI(city);
 };
 
 
 
-
-//function to manipulate dom and add in select info for results page
+//function to manipulate dom and add in select info from weather api to the results page
 function results(resultObject) {
     console.log(resultObject);
 
@@ -60,7 +58,7 @@ function results(resultObject) {
 
 
 
-
+//function to manipulate dom and add in select info from forecast api to results page
 function forecastResults(forData) {
 
     var forecastCard = document.createElement("div")
@@ -95,7 +93,7 @@ function forecastResults(forData) {
 
 
 
-
+// function to fetch data from weather api, return it in json, send data to results function, and run api function for forecast api
 function searchAPI(city) {
     var searchUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
     searchUrl = searchUrl + city + "&appid=" + weatherApiKey + "&units=imperial";
@@ -112,7 +110,7 @@ function searchAPI(city) {
 
             if (data.cod !== 200) {
                 var errorPrint = document.createElement("h2");
-                errorPrint.textContent = "No results found. Please search again."
+                errorPrint.textContent = "No results found. Please search again.";
                 resultsContent.append(errorPrint);
             } else {
                 resultsContent.textContent = '';
@@ -130,7 +128,7 @@ function searchAPI(city) {
 
 
 
-
+// function to fetch data from forecast api, return it in json, send data to forecastResults function
 function searchApiForecast(city) {
     var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?&q=';
     forecastUrl = forecastUrl + city + "&appid=" + weatherApiKey + "&units=imperial";
@@ -156,7 +154,7 @@ function searchApiForecast(city) {
 
 
 
-
+// grabs user input and runs searchAPI function
 function handleFormSubmit(event) {
     event.preventDefault();
 
@@ -170,8 +168,73 @@ function handleFormSubmit(event) {
     searchAPI(userInput);
 };
 
+// event listener that registers submission by user and then stores search in previous searches and runs handleFormSubmit function
+searchForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+  
+    var userInput = document.getElementById('input').value.trim();
+  
+    // Add new todoText to todos array clear the input
+    searchHistory.push(userInput);
+  
+    // Store updated todos in localStorage, re-render the list
+    storage();
+    renderHistory();
+    handleFormSubmit(event);
+  });
 
-
-searchForm.addEventListener("submit", handleFormSubmit);
-
+// calls function to run at start of page
 parameters();
+
+
+// Local storage
+
+var searchHistory = [];
+
+// The following function renders items in previous search button elements
+function renderHistory() {
+  // Clear previous search element
+  previousSearch.innerHTML = "";
+
+  // Render a new button for each search
+  for (var i = 0; i < searchHistory.length; i++) {
+    var searches = searchHistory[i];
+
+    var button = document.createElement("button");
+    button.textContent = searches;
+    button.setAttribute("data-index", i);
+    button.classList.add("d-flex", "column", 'btn', 'btn-primary', 'col-4', 'm-3', 'mx-auto')
+
+    previousSearch.appendChild(button);
+  }
+}
+
+// This function is being called below and will run when the page loads.
+function init() {
+  // Get stored searches from localStorage
+  var storedHistory = JSON.parse(localStorage.getItem("searchHistory"));
+
+  // If todos were retrieved from localStorage, update the todos array to it
+  if (storedHistory !== null) {
+    searchHistory = storedHistory;
+  }
+
+  // This is a helper function that will render todos to the DOM
+  renderHistory();
+}
+
+function storage() {
+  // Stringify and set key in localStorage to searchHistory array
+  localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+}
+
+// Add click event to searchHistory element
+previousSearch.addEventListener("click", function(event) {
+    searchAPI(event.target.innerHTML)
+    // Store updated searches in localStorage, re-render the list
+    storage();
+    renderHistory();
+});
+
+// Calls init to retrieve data and render it to the page on load
+init()

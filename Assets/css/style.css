@@ -1,20 +1,24 @@
-
+/* background color of jumbotron */
 .jumbotron {
     background-color: rgba(46, 103, 85, 0.858);
 }
 
+/* font size of label */
 label {
     font-size: 200%;
 }
 
+/* padding to space between elements */
 .spacing {
     padding: 20px;
 }
 
+/* h1 color is white */
 h1 {
     color: white;
 }
 
+/* display settings for search form on results page */
 .bc {
     background-color: rgba(255, 255, 255, 0.64);
     color: rgb(46, 103, 85);
@@ -26,6 +30,7 @@ h1 {
     text-shadow: 2px 2px 2px rgb(86, 86, 86);
 }
 
+/* display settings for current weather results on results page */
 .wr {
     background-color: rgba(255, 255, 255, 0.64);
     color: rgb(46, 103, 85);
@@ -37,6 +42,7 @@ h1 {
     text-shadow: 2px 2px 2px rgb(86, 86, 86);
 }
 
+/* display settings for forecast weather results on results page */
 .fs {
     color: white;
     background-color: rgba(46, 103, 85, 0.858)
@@ -48,6 +54,7 @@ h1 {
     font-size: 140%;
 }
 
+/* color of header */
 #searchheader {
     color: rgb(46, 103, 85);
     
